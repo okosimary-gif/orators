@@ -51,19 +51,19 @@
         }
         
         section {
-            padding: 80px 0;
+            padding: 60px 0;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             position: relative;
         }
         
         .section-title:after {
             content: '';
             position: absolute;
-            width: 80px;
+            width: 60px;
             height: 4px;
             background: var(--accent);
             bottom: -10px;
@@ -74,7 +74,7 @@
         
         .btn {
             display: inline-block;
-            padding: 16px 32px;
+            padding: 14px 28px;
             background: var(--accent);
             color: white;
             border-radius: var(--border-radius);
@@ -84,7 +84,7 @@
             border: none;
             cursor: pointer;
             text-align: center;
-            font-size: 1.1rem;
+            font-size: 1rem;
             box-shadow: 0 5px 15px rgba(255, 122, 0, 0.3);
         }
         
@@ -95,8 +95,8 @@
         }
         
         .btn-large {
-            padding: 20px 40px;
-            font-size: 1.2rem;
+            padding: 18px 36px;
+            font-size: 1.1rem;
             font-weight: 700;
         }
         
@@ -114,7 +114,7 @@
         header {
             background: var(--primary);
             color: white;
-            padding: 20px 0;
+            padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -129,16 +129,16 @@
         
         .logo {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             font-weight: 900;
             color: white;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
         
         .logo-img {
-            height: 40px;
+            height: 35px;
             width: auto;
         }
         
@@ -149,15 +149,25 @@
         .header-cta {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 10px;
         }
         
         .header-price {
             background: var(--accent);
-            padding: 8px 16px;
+            padding: 6px 12px;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 0.9rem;
+        }
+        
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
         }
         
         /* Hero Section */
@@ -166,19 +176,19 @@
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 120px 0;
+            padding: 80px 0;
             text-align: center;
         }
         
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+            margin-bottom: 1.2rem;
         }
         
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             max-width: 800px;
-            margin: 0 auto 2.5rem;
+            margin: 0 auto 2rem;
             opacity: 0.9;
         }
         
@@ -186,11 +196,12 @@
             display: inline-block;
             background: rgba(255, 122, 0, 0.2);
             border: 2px solid var(--accent);
-            padding: 10px 20px;
+            padding: 8px 16px;
             border-radius: 50px;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             font-weight: 600;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
         }
         
         /* Problem Section */
@@ -200,14 +211,14 @@
         
         .problem-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
         }
         
         .problem-card {
             background: white;
-            padding: 30px;
+            padding: 25px;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
             transition: var(--transition);
@@ -219,39 +230,39 @@
         }
         
         .problem-card i {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: var(--accent);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
         
         /* Benefits Section */
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: 1fr;
+            gap: 20px;
         }
         
         .benefit-item {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
         
         .benefit-icon {
             background: rgba(255, 122, 0, 0.1);
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 20px;
+            margin-right: 15px;
             flex-shrink: 0;
         }
         
         .benefit-icon i {
             color: var(--accent);
-            font-size: 1.2rem;
+            font-size: 1rem;
         }
         
         /* Bonuses Section */
@@ -261,9 +272,9 @@
         
         .bonus-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
         }
         
         .bonus-card {
@@ -282,18 +293,18 @@
         .bonus-header {
             background: var(--secondary);
             color: white;
-            padding: 20px;
+            padding: 15px;
             text-align: center;
         }
         
         .bonus-body {
-            padding: 30px;
+            padding: 25px;
         }
         
         .bonus-value {
             color: var(--accent);
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-top: 15px;
         }
         
@@ -326,8 +337,8 @@
         
         /* 3D Screenshot Container */
         .screenshot-3d-container {
-            perspective: 1200px;
-            margin-bottom: 60px;
+            perspective: 1000px;
+            margin-bottom: 40px;
             width: 100%;
             display: flex;
             justify-content: center;
@@ -335,8 +346,8 @@
         
         .screenshot-3d-inner {
             position: relative;
-            width: 300px;
-            height: 300px;
+            width: 250px;
+            height: 250px;
             transform-style: preserve-3d;
             animation: rotate3d 20s infinite linear;
         }
@@ -346,53 +357,53 @@
             width: 100%;
             height: 100%;
             background: white;
-            border-radius: 15px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
             display: flex;
             flex-direction: column;
         }
         
         .screenshot-3d-face-front {
-            transform: translateZ(150px);
+            transform: translateZ(125px);
         }
         
         .screenshot-3d-face-back {
-            transform: rotateY(180deg) translateZ(150px);
+            transform: rotateY(180deg) translateZ(125px);
         }
         
         .screenshot-3d-face-right {
-            transform: rotateY(90deg) translateZ(150px);
+            transform: rotateY(90deg) translateZ(125px);
         }
         
         .screenshot-3d-face-left {
-            transform: rotateY(-90deg) translateZ(150px);
+            transform: rotateY(-90deg) translateZ(125px);
         }
         
         .screenshot-3d-face-top {
-            transform: rotateX(90deg) translateZ(150px);
+            transform: rotateX(90deg) translateZ(125px);
         }
         
         .screenshot-3d-face-bottom {
-            transform: rotateX(-90deg) translateZ(150px);
+            transform: rotateX(-90deg) translateZ(125px);
         }
         
         .screenshot-header {
             background: #e0e0e0;
-            height: 40px;
+            height: 35px;
             display: flex;
             align-items: center;
-            padding: 0 20px;
+            padding: 0 15px;
         }
         
         .screenshot-dots {
             display: flex;
-            gap: 8px;
+            gap: 6px;
         }
         
         .screenshot-dot {
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
         }
         
@@ -408,35 +419,36 @@
             align-items: center;
             justify-content: center;
             color: var(--dark);
-            padding: 40px;
+            padding: 25px;
             flex-grow: 1;
         }
         
         .screenshot-placeholder i {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: var(--accent);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
         .screenshot-placeholder h4 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
+            font-size: 1rem;
+            margin-bottom: 8px;
             text-align: center;
         }
         
         .testimonial-text {
             text-align: center;
             max-width: 800px;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-style: italic;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             opacity: 0.9;
+            padding: 0 10px;
         }
         
         .testimonial-author {
             font-weight: 700;
-            margin-top: 20px;
-            font-size: 1.1rem;
+            margin-top: 15px;
+            font-size: 1rem;
             color: var(--accent);
         }
         
@@ -450,21 +462,22 @@
             margin: 0 auto;
             background: white;
             border-radius: var(--border-radius);
-            padding: 40px;
+            padding: 30px 20px;
             box-shadow: var(--shadow-heavy);
         }
         
         .payment-steps {
             display: flex;
             flex-direction: column;
-            gap: 30px;
-            margin: 40px 0;
+            gap: 25px;
+            margin: 30px 0;
         }
         
         .payment-step {
             display: flex;
+            flex-direction: column;
             align-items: flex-start;
-            gap: 20px;
+            gap: 15px;
         }
         
         .step-number {
@@ -480,16 +493,22 @@
             flex-shrink: 0;
         }
         
+        .step-content {
+            flex: 1;
+        }
+        
         .bank-details {
             background: var(--light);
             border-radius: var(--border-radius);
-            padding: 25px;
-            margin: 30px 0;
+            padding: 20px;
+            margin: 20px 0;
             border-left: 4px solid var(--accent);
+            overflow-x: auto;
         }
         
         .bank-detail-item {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             padding: 10px 0;
             border-bottom: 1px dashed #ddd;
@@ -502,19 +521,21 @@
         .bank-detail-label {
             font-weight: 600;
             color: var(--secondary);
+            margin-bottom: 5px;
         }
         
         .bank-detail-value {
             font-weight: 700;
             color: var(--dark);
             font-family: monospace;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            word-break: break-all;
         }
         
         .whatsapp-cta {
             text-align: center;
-            margin-top: 40px;
-            padding: 30px;
+            margin-top: 30px;
+            padding: 25px 15px;
             background: rgba(37, 211, 102, 0.1);
             border-radius: var(--border-radius);
             border: 2px dashed #25D366;
@@ -525,7 +546,7 @@
             background: linear-gradient(135deg, var(--secondary), var(--primary));
             color: white;
             border-radius: var(--border-radius);
-            padding: 50px;
+            padding: 30px 20px;
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
@@ -537,41 +558,42 @@
         .pricing-card:before {
             content: '';
             position: absolute;
-            width: 200px;
-            height: 200px;
+            width: 150px;
+            height: 150px;
             background: rgba(255, 122, 0, 0.1);
             border-radius: 50%;
-            top: -100px;
-            right: -100px;
+            top: -75px;
+            right: -75px;
         }
         
         .pricing-card:after {
             content: '';
             position: absolute;
-            width: 150px;
-            height: 150px;
+            width: 120px;
+            height: 120px;
             background: rgba(255, 122, 0, 0.1);
             border-radius: 50%;
-            bottom: -75px;
-            left: -75px;
+            bottom: -60px;
+            left: -60px;
         }
         
         .price-comparison {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 30px;
-            margin: 30px 0;
+            gap: 15px;
+            margin: 25px 0;
         }
         
         .old-price {
             text-decoration: line-through;
             color: rgba(255, 255, 255, 0.7);
-            font-size: 1.5rem;
+            font-size: 1.2rem;
         }
         
         .current-price {
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             font-weight: 800;
             color: var(--accent);
         }
@@ -579,11 +601,12 @@
         .seats-counter {
             background: rgba(255, 122, 0, 0.2);
             border: 2px solid var(--accent);
-            padding: 15px;
+            padding: 12px;
             border-radius: var(--border-radius);
-            margin: 30px auto;
+            margin: 20px auto;
             max-width: 500px;
             font-weight: 600;
+            font-size: 0.9rem;
         }
         
         /* Guarantee Section */
@@ -591,29 +614,29 @@
             background: rgba(40, 167, 69, 0.1);
             border: 2px solid var(--success);
             border-radius: var(--border-radius);
-            padding: 40px;
+            padding: 30px 20px;
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
         }
         
         .guarantee-card i {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: var(--success);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
         /* Footer */
         footer {
             background: var(--primary);
             color: white;
-            padding: 60px 0 30px;
+            padding: 50px 0 25px;
             text-align: center;
         }
         
         .footer-logo {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 900;
             margin-bottom: 20px;
             display: flex;
@@ -627,7 +650,7 @@
         }
         
         .copyright {
-            margin-top: 40px;
+            margin-top: 30px;
             padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: rgba(255, 255, 255, 0.7);
@@ -652,40 +675,105 @@
             animation: float 3s ease-in-out infinite;
         }
         
-        /* Responsive */
-        @media (max-width: 768px) {
+        /* RESPONSIVE MEDIA QUERIES */
+        
+        /* Tablet and larger */
+        @media (min-width: 768px) {
+            section {
+                padding: 80px 0;
+            }
+            
+            .hero {
+                padding: 100px 0;
+            }
+            
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
             
             .hero p {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
             }
             
-            .price-comparison {
-                flex-direction: column;
-                gap: 10px;
+            .section-title {
+                margin-bottom: 3rem;
             }
             
-            .current-price {
-                font-size: 2.8rem;
+            .section-title:after {
+                width: 80px;
             }
             
-            .pricing-card {
-                padding: 30px 20px;
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            
+            .bonus-cards {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 25px;
+            }
+            
+            .payment-step {
+                flex-direction: row;
+                align-items: flex-start;
+                gap: 20px;
             }
             
             .payment-container {
-                padding: 25px 20px;
+                padding: 40px;
             }
             
-            .screenshot-3d-container {
-                perspective: 800px;
+            .pricing-card {
+                padding: 50px;
+            }
+            
+            .price-comparison {
+                flex-direction: row;
+                gap: 30px;
+            }
+            
+            .current-price {
+                font-size: 3.5rem;
+            }
+            
+            .btn {
+                padding: 16px 32px;
+                font-size: 1.1rem;
+            }
+            
+            .btn-large {
+                padding: 20px 40px;
+                font-size: 1.2rem;
+            }
+            
+            .testimonial-text {
+                font-size: 1.2rem;
+            }
+            
+            .logo {
+                font-size: 1.8rem;
+            }
+            
+            .header-price {
+                padding: 8px 16px;
+                font-size: 1.1rem;
+            }
+        }
+        
+        /* Desktop */
+        @media (min-width: 992px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .problem-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 30px;
             }
             
             .screenshot-3d-inner {
-                width: 250px;
-                height: 250px;
+                width: 300px;
+                height: 300px;
             }
             
             .screenshot-3d-face-front,
@@ -694,27 +782,145 @@
             .screenshot-3d-face-left,
             .screenshot-3d-face-top,
             .screenshot-3d-face-bottom {
-                transform: translateZ(125px);
+                transform: translateZ(150px);
             }
             
             .screenshot-3d-face-back {
-                transform: rotateY(180deg) translateZ(125px);
+                transform: rotateY(180deg) translateZ(150px);
             }
             
             .screenshot-3d-face-right {
-                transform: rotateY(90deg) translateZ(125px);
+                transform: rotateY(90deg) translateZ(150px);
             }
             
             .screenshot-3d-face-left {
-                transform: rotateY(-90deg) translateZ(125px);
+                transform: rotateY(-90deg) translateZ(150px);
             }
             
             .screenshot-3d-face-top {
-                transform: rotateX(90deg) translateZ(125px);
+                transform: rotateX(90deg) translateZ(150px);
             }
             
             .screenshot-3d-face-bottom {
-                transform: rotateX(-90deg) translateZ(125px);
+                transform: rotateX(-90deg) translateZ(150px);
+            }
+        }
+        
+        /* Small mobile devices */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .current-price {
+                font-size: 2rem;
+            }
+            
+            .screenshot-3d-inner {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .screenshot-3d-face-front,
+            .screenshot-3d-face-back,
+            .screenshot-3d-face-right,
+            .screenshot-3d-face-left,
+            .screenshot-3d-face-top,
+            .screenshot-3d-face-bottom {
+                transform: translateZ(100px);
+            }
+            
+            .screenshot-3d-face-back {
+                transform: rotateY(180deg) translateZ(100px);
+            }
+            
+            .screenshot-3d-face-right {
+                transform: rotateY(90deg) translateZ(100px);
+            }
+            
+            .screenshot-3d-face-left {
+                transform: rotateY(-90deg) translateZ(100px);
+            }
+            
+            .screenshot-3d-face-top {
+                transform: rotateX(90deg) translateZ(100px);
+            }
+            
+            .screenshot-3d-face-bottom {
+                transform: rotateX(-90deg) translateZ(100px);
+            }
+            
+            .bank-detail-item {
+                flex-direction: column;
+            }
+            
+            .header-cta {
+                flex-direction: column;
+                gap: 8px;
+                align-items: flex-end;
+            }
+            
+            .header-price {
+                font-size: 0.8rem;
+                padding: 5px 10px;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Extra small devices */
+        @media (max-width: 360px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            
+            .problem-card, .bonus-body, .payment-container {
+                padding: 20px;
+            }
+            
+            .screenshot-3d-inner {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .screenshot-3d-face-front,
+            .screenshot-3d-face-back,
+            .screenshot-3d-face-right,
+            .screenshot-3d-face-left,
+            .screenshot-3d-face-top,
+            .screenshot-3d-face-bottom {
+                transform: translateZ(90px);
+            }
+            
+            .screenshot-3d-face-back {
+                transform: rotateY(180deg) translateZ(90px);
+            }
+            
+            .screenshot-3d-face-right {
+                transform: rotateY(90deg) translateZ(90px);
+            }
+            
+            .screenshot-3d-face-left {
+                transform: rotateY(-90deg) translateZ(90px);
+            }
+            
+            .screenshot-3d-face-top {
+                transform: rotateX(90deg) translateZ(90px);
+            }
+            
+            .screenshot-3d-face-bottom {
+                transform: rotateX(-90deg) translateZ(90px);
             }
         }
     </style>
@@ -724,8 +930,8 @@
     <header>
         <div class="container header-container">
             <div class="logo">
-                <div class="logo-img-placeholder" style="background: var(--accent); width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-                    <i class="fas fa-microphone-alt" style="color: white; font-size: 1.5rem;"></i>
+                <div class="logo-img-placeholder" style="background: var(--accent); width: 35px; height: 35px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-microphone-alt" style="color: white; font-size: 1.3rem;"></i>
                 </div>
                 <div>ORATORS<span>GUILD</span></div>
             </div>
@@ -741,10 +947,10 @@
         <div class="container">
             <div class="hero-badge">LIMITED TIME OFFER</div>
             <h1>SPEAK AND WIN CLIENTS</h1>
-            <h2>The Client Magnetic Speaking System™</h2>
+            <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem;">The Client Magnetic Speaking System™</h2>
             <p>Turn Your Voice Into a Tool That Brings Clients, Money, and Opportunities Without Begging Anyone.</p>
             <a href="#payment" class="btn btn-large floating"><i class="fas fa-bolt"></i> Secure Your Spot Now</a>
-            <p style="margin-top: 20px; font-size: 1rem;">Only 50 seats available. Doors close when filled.</p>
+            <p style="margin-top: 20px; font-size: 0.9rem;">Only 50 seats available. Doors close when filled.</p>
         </div>
     </section>
 
@@ -775,9 +981,9 @@
                 </div>
             </div>
             
-            <div style="text-align: center; margin-top: 40px; padding: 30px; background: white; border-radius: var(--border-radius); box-shadow: var(--shadow);">
-                <h3 style="color: var(--accent);">Let me tell you the truth most people will not say:</h3>
-                <p style="font-size: 1.2rem; font-weight: 600; margin-top: 15px;">Your problem is not your business.<br>Your problem is the way you talk about your business.<br>And until you fix that, clients will keep passing you.</p>
+            <div style="text-align: center; margin-top: 40px; padding: 25px; background: white; border-radius: var(--border-radius); box-shadow: var(--shadow);">
+                <h3 style="color: var(--accent); font-size: 1.3rem;">Let me tell you the truth most people will not say:</h3>
+                <p style="font-size: 1.1rem; font-weight: 600; margin-top: 15px; line-height: 1.4;">Your problem is not your business.<br>Your problem is the way you talk about your business.<br>And until you fix that, clients will keep passing you.</p>
             </div>
         </div>
     </section>
@@ -835,10 +1041,10 @@
                 </div>
             </div>
             
-            <div style="text-align: center; margin-top: 50px; padding: 40px; background: linear-gradient(135deg, var(--secondary), var(--primary)); color: white; border-radius: var(--border-radius);">
-                <h3 style="color: var(--accent);">That is what The Client Magnetic Speaking System is created to do.</h3>
-                <p style="font-size: 1.3rem; font-weight: 600; margin-top: 20px;">It is designed for one outcome only:<br>Make your speaking bring you clients. Fast.</p>
-                <p style="margin-top: 15px; font-style: italic;">Not theory. Not motivational talk. Pure practical communication that puts money in your account.</p>
+            <div style="text-align: center; margin-top: 40px; padding: 30px; background: linear-gradient(135deg, var(--secondary), var(--primary)); color: white; border-radius: var(--border-radius);">
+                <h3 style="color: var(--accent); font-size: 1.3rem;">That is what The Client Magnetic Speaking System is created to do.</h3>
+                <p style="font-size: 1.2rem; font-weight: 600; margin-top: 15px; line-height: 1.3;">It is designed for one outcome only:<br>Make your speaking bring you clients. Fast.</p>
+                <p style="margin-top: 15px; font-style: italic; font-size: 1rem;">Not theory. Not motivational talk. Pure practical communication that puts money in your account.</p>
             </div>
         </div>
     </section>
@@ -847,31 +1053,31 @@
     <section style="background: var(--light);">
         <div class="container">
             <h2 class="section-title">WHO IS THIS FOR?</h2>
-            <div style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
-                <p style="font-size: 1.2rem;">This system is perfect for you if you're a:</p>
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 30px;">
+                <p style="font-size: 1.1rem;">This system is perfect for you if you're a:</p>
             </div>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto;">
-                <div style="background: white; padding: 25px; border-radius: var(--border-radius); box-shadow: var(--shadow); text-align: center;">
-                    <i class="fas fa-briefcase" style="font-size: 2rem; color: var(--accent); margin-bottom: 15px;"></i>
-                    <h3>Business Owner</h3>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; max-width: 900px; margin: 0 auto;">
+                <div style="background: white; padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow); text-align: center;">
+                    <i class="fas fa-briefcase" style="font-size: 1.8rem; color: var(--accent); margin-bottom: 10px;"></i>
+                    <h3 style="font-size: 1.1rem;">Business Owner</h3>
                 </div>
-                <div style="background: white; padding: 25px; border-radius: var(--border-radius); box-shadow: var(--shadow); text-align: center;">
-                    <i class="fas fa-rocket" style="font-size: 2rem; color: var(--accent); margin-bottom: 15px;"></i>
-                    <h3>Startup Founder</h3>
+                <div style="background: white; padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow); text-align: center;">
+                    <i class="fas fa-rocket" style="font-size: 1.8rem; color: var(--accent); margin-bottom: 10px;"></i>
+                    <h3 style="font-size: 1.1rem;">Startup Founder</h3>
                 </div>
-                <div style="background: white; padding: 25px; border-radius: var(--border-radius); box-shadow: var(--shadow); text-align: center;">
-                    <i class="fas fa-user-tie" style="font-size: 2rem; color: var(--accent); margin-bottom: 15px;"></i>
-                    <h3>Corporate Professional</h3>
+                <div style="background: white; padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow); text-align: center;">
+                    <i class="fas fa-user-tie" style="font-size: 1.8rem; color: var(--accent); margin-bottom: 10px;"></i>
+                    <h3 style="font-size: 1.1rem;">Corporate Professional</h3>
                 </div>
-                <div style="background: white; padding: 25px; border-radius: var(--border-radius); box-shadow: var(--shadow); text-align: center;">
-                    <i class="fas fa-chalkboard-teacher" style="font-size: 2rem; color: var(--accent); margin-bottom: 15px;"></i>
-                    <h3>Coach or Creator</h3>
+                <div style="background: white; padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow); text-align: center;">
+                    <i class="fas fa-chalkboard-teacher" style="font-size: 1.8rem; color: var(--accent); margin-bottom: 10px;"></i>
+                    <h3 style="font-size: 1.1rem;">Coach or Creator</h3>
                 </div>
             </div>
             
-            <div style="text-align: center; margin-top: 40px; padding: 30px; background: white; border-radius: var(--border-radius); max-width: 800px; margin-left: auto; margin-right: auto; box-shadow: var(--shadow);">
-                <h3 style="color: var(--accent);">If speaking is part of your work, then speaking must start paying you.</h3>
+            <div style="text-align: center; margin-top: 30px; padding: 25px; background: white; border-radius: var(--border-radius); max-width: 800px; margin-left: auto; margin-right: auto; box-shadow: var(--shadow);">
+                <h3 style="color: var(--accent); font-size: 1.2rem;">If speaking is part of your work, then speaking must start paying you.</h3>
             </div>
         </div>
     </section>
@@ -881,65 +1087,65 @@
         <div class="container">
             <h2 class="section-title">WHAT YOU ARE GETTING</h2>
             
-            <div style="max-width: 900px; margin: 0 auto 50px; background: linear-gradient(135deg, var(--secondary), var(--primary)); color: white; padding: 40px; border-radius: var(--border-radius);">
-                <h3 style="color: var(--accent); text-align: center;">The Client Magnetic Speaking System™</h3>
-                <p style="text-align: center; margin-bottom: 30px;">A transformational communication experience that teaches you exactly how to:</p>
+            <div style="max-width: 900px; margin: 0 auto 40px; background: linear-gradient(135deg, var(--secondary), var(--primary)); color: white; padding: 30px 20px; border-radius: var(--border-radius);">
+                <h3 style="color: var(--accent); text-align: center; font-size: 1.4rem;">The Client Magnetic Speaking System™</h3>
+                <p style="text-align: center; margin-bottom: 25px; font-size: 1rem;">A transformational communication experience that teaches you exactly how to:</p>
                 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-                    <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
-                        <div style="background: rgba(255, 122, 0, 0.2); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
-                            <i class="fas fa-check" style="color: var(--accent); font-size: 0.8rem;"></i>
+                <div style="display: grid; grid-template-columns: 1fr; gap: 15px;">
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 12px;">
+                        <div style="background: rgba(255, 122, 0, 0.2); width: 25px; height: 25px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px; flex-shrink: 0;">
+                            <i class="fas fa-check" style="color: var(--accent); font-size: 0.7rem;"></i>
                         </div>
-                        <span>Deliver a premium pitch</span>
+                        <span style="font-size: 0.95rem;">Deliver a premium pitch</span>
                     </div>
-                    <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
-                        <div style="background: rgba(255, 122, 0, 0.2); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
-                            <i class="fas fa-check" style="color: var(--accent); font-size: 0.8rem;"></i>
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 12px;">
+                        <div style="background: rgba(255, 122, 0, 0.2); width: 25px; height: 25px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px; flex-shrink: 0;">
+                            <i class="fas fa-check" style="color: var(--accent); font-size: 0.7rem;"></i>
                         </div>
-                        <span>Command respect when you speak</span>
+                        <span style="font-size: 0.95rem;">Command respect when you speak</span>
                     </div>
-                    <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
-                        <div style="background: rgba(255, 122, 0, 0.2); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
-                            <i class="fas fa-check" style="color: var(--accent); font-size: 0.8rem;"></i>
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 12px;">
+                        <div style="background: rgba(255, 122, 0, 0.2); width: 25px; height: 25px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px; flex-shrink: 0;">
+                            <i class="fas fa-check" style="color: var(--accent); font-size: 0.7rem;"></i>
                         </div>
-                        <span>Convert objections into agreement</span>
+                        <span style="font-size: 0.95rem;">Convert objections into agreement</span>
                     </div>
-                    <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
-                        <div style="background: rgba(255, 122, 0, 0.2); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
-                            <i class="fas fa-check" style="color: var(--accent); font-size: 0.8rem;"></i>
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 12px;">
+                        <div style="background: rgba(255, 122, 0, 0.2); width: 25px; height: 25px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px; flex-shrink: 0;">
+                            <i class="fas fa-check" style="color: var(--accent); font-size: 0.7rem;"></i>
                         </div>
-                        <span>Position yourself as the best option</span>
+                        <span style="font-size: 0.95rem;">Position yourself as the best option</span>
                     </div>
-                    <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
-                        <div style="background: rgba(255, 122, 0, 0.2); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
-                            <i class="fas fa-check" style="color: var(--accent); font-size: 0.8rem;"></i>
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 12px;">
+                        <div style="background: rgba(255, 122, 0, 0.2); width: 25px; height: 25px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px; flex-shrink: 0;">
+                            <i class="fas fa-check" style="color: var(--accent); font-size: 0.7rem;"></i>
                         </div>
-                        <span>Make clients feel safe choosing you</span>
+                        <span style="font-size: 0.95rem;">Make clients feel safe choosing you</span>
                     </div>
-                    <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
-                        <div style="background: rgba(255, 122, 0, 0.2); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
-                            <i class="fas fa-check" style="color: var(--accent); font-size: 0.8rem;"></i>
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 12px;">
+                        <div style="background: rgba(255, 122, 0, 0.2); width: 25px; height: 25px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px; flex-shrink: 0;">
+                            <i class="fas fa-check" style="color: var(--accent); font-size: 0.7rem;"></i>
                         </div>
-                        <span>Speak in a way that increases your price power</span>
+                        <span style="font-size: 0.95rem;">Speak in a way that increases your price power</span>
                     </div>
                 </div>
             </div>
             
-            <h3 style="text-align: center; margin-bottom: 40px; color: var(--secondary);">PLUS 3 PREMIUM BONUSES FOR YOU</h3>
+            <h3 style="text-align: center; margin-bottom: 30px; color: var(--secondary); font-size: 1.4rem;">PLUS 3 PREMIUM BONUSES FOR YOU</h3>
             
             <div class="bonus-cards">
                 <div class="bonus-card">
                     <div class="bonus-header">
-                        <h3>Bonus 1</h3>
-                        <p>Client-Closing Script Pack</p>
+                        <h3 style="font-size: 1.2rem;">Bonus 1</h3>
+                        <p style="font-size: 1rem;">Client-Closing Script Pack</p>
                     </div>
                     <div class="bonus-body">
                         <p>Word-for-word speaking scripts for:</p>
-                        <ul style="margin-top: 15px; margin-left: 20px;">
-                            <li style="margin-bottom: 8px;">Handling price objections</li>
-                            <li style="margin-bottom: 8px;">Responding to "I'll get back to you"</li>
-                            <li style="margin-bottom: 8px;">Closing on WhatsApp or call</li>
-                            <li style="margin-bottom: 8px;">Follow-up scripts that work</li>
+                        <ul style="margin-top: 12px; margin-left: 18px;">
+                            <li style="margin-bottom: 6px; font-size: 0.95rem;">Handling price objections</li>
+                            <li style="margin-bottom: 6px; font-size: 0.95rem;">Responding to "I'll get back to you"</li>
+                            <li style="margin-bottom: 6px; font-size: 0.95rem;">Closing on WhatsApp or call</li>
+                            <li style="margin-bottom: 6px; font-size: 0.95rem;">Follow-up scripts that work</li>
                         </ul>
                         <div class="bonus-value">Value: ₦35,000</div>
                     </div>
@@ -947,15 +1153,15 @@
                 
                 <div class="bonus-card">
                     <div class="bonus-header">
-                        <h3>Bonus 2</h3>
-                        <p>The Magnetic Message Template Vault</p>
+                        <h3 style="font-size: 1.2rem;">Bonus 2</h3>
+                        <p style="font-size: 1rem;">The Magnetic Message Template Vault</p>
                     </div>
                     <div class="bonus-body">
                         <p>Templates you can copy and paste to:</p>
-                        <ul style="margin-top: 15px; margin-left: 20px;">
-                            <li style="margin-bottom: 8px;">Craft an irresistible offer</li>
-                            <li style="margin-bottom: 8px;">Talk about your value like a pro</li>
-                            <li style="margin-bottom: 8px;">Position yourself as premium</li>
+                        <ul style="margin-top: 12px; margin-left: 18px;">
+                            <li style="margin-bottom: 6px; font-size: 0.95rem;">Craft an irresistible offer</li>
+                            <li style="margin-bottom: 6px; font-size: 0.95rem;">Talk about your value like a pro</li>
+                            <li style="margin-bottom: 6px; font-size: 0.95rem;">Position yourself as premium</li>
                         </ul>
                         <div class="bonus-value">Value: ₦25,000</div>
                     </div>
@@ -963,11 +1169,11 @@
                 
                 <div class="bonus-card">
                     <div class="bonus-header">
-                        <h3>Bonus 3</h3>
-                        <p>Personal Pitch Audit by Mary Okosi</p>
+                        <h3 style="font-size: 1.2rem;">Bonus 3</h3>
+                        <p style="font-size: 1rem;">Personal Pitch Audit by Mary Okosi</p>
                     </div>
                     <div class="bonus-body">
-                        <p>Send in your pitch. Get a personalized voice note breaking down what to fix so your pitch hits harder.</p>
+                        <p style="font-size: 0.95rem;">Send in your pitch. Get a personalized voice note breaking down what to fix so your pitch hits harder.</p>
                         <div class="bonus-value">Value: ₦50,000</div>
                     </div>
                 </div>
@@ -996,9 +1202,7 @@
                             <div class="screenshot-placeholder">
                                 <i class="fas fa-comment-dots"></i>
                                 <h4>WhatsApp Testimonial</h4>
-                                <p style="text-align: center; font-size: 0.9rem;">Before this program, I knew my service was good, but I could never explain it properly. After the training, I delivered my first pitch confidently, and within a week, I closed three high-paying clients I thought were out of reach. Mary’s system works."
-
-                                  — Chinedu O., Tech Entrepreneur</p>
+                                <p style="text-align: center; font-size: 0.8rem;">Client messages showing successful conversions</p>
                             </div>
                         </div>
                         
@@ -1014,8 +1218,8 @@
                             <div class="screenshot-placeholder">
                                 <i class="fas fa-star"></i>
                                 <h4>5-Star Reviews</h4>
-                                <p style="text-align: center; font-size: 0.9rem;">I’ve always struggled to sell my programs without sounding pushy. The Client Magnetic Speaking System™ gave me exact scripts and techniques to position my value. Now, clients reach out to me without me chasing anyone!"
-— Amaka E., Personal Development Coach</p>
+                                <p style="text-align: center; font-size: 0.8rem;">I spent months pitching investors with no success. After applying the techniques I learned from Mary, I finally secured a ₦5 million seed investment in just two pitches. This system is pure results.
+— Sade L., Startup Founder</p>
                             </div>
                         </div>
                         
@@ -1031,8 +1235,8 @@
                             <div class="screenshot-placeholder">
                                 <i class="fas fa-chart-line"></i>
                                 <h4>Revenue Growth</h4>
-                                <p style="text-align: center; font-size: 0.9rem;">I used to get nervous during presentations and felt my ideas were undervalued. After this training, I speak with clarity and authority. My manager and clients now actively seek my input, and my salary negotiation went smoothly!"
-— Tunde A., Corporate Manage</p>
+                                <p style="text-align: center; font-size: 0.8rem;">I always had inquiries, but no one paid. After learning how to speak about my service, I doubled my client conversion in a month. It’s not just theory—it’s money in the bank!
+— Emeka N., Freelance Designer</p>
                             </div>
                         </div>
                         
@@ -1048,8 +1252,8 @@
                             <div class="screenshot-placeholder">
                                 <i class="fas fa-user-check"></i>
                                 <h4>Client Wins</h4>
-                                <p style="text-align: center; font-size: 0.9rem;">I spent months pitching investors with no success. After applying the techniques I learned from Mary, I finally secured a ₦5 million seed investment in just two pitches. This system is pure results."
-— Sade L., Startup Founder</p>
+                                <p style="text-align: center; font-size: 0.8rem;">I used to get nervous during presentations and felt my ideas were undervalued. After this training, I speak with clarity and authority. My manager and clients now actively seek my input, and my salary negotiation went smoothly!
+— Tunde A., Corporate Manager</p>
                             </div>
                         </div>
                         
@@ -1065,7 +1269,8 @@
                             <div class="screenshot-placeholder">
                                 <i class="fas fa-award"></i>
                                 <h4>Transformation Proof</h4>
-                                <p style="text-align: center; font-size: 0.9rem;">Evidence of communication skill improvement</p>
+                                <p style="text-align: center; font-size: 0.8rem;">I’ve always struggled to sell my programs without sounding pushy. The Client Magnetic Speaking System™ gave me exact scripts and techniques to position my value. Now, clients reach out to me without me chasing anyone!
+— Amaka E., Personal Development Coach</p>
                             </div>
                         </div>
                         
@@ -1081,7 +1286,8 @@
                             <div class="screenshot-placeholder">
                                 <i class="fas fa-heart"></i>
                                 <h4>Happy Participants</h4>
-                                <p style="text-align: center; font-size: 0.9rem;">Testimonials from transformed speakers</p>
+                                <p style="text-align: center; font-size: 0.8rem;">Before this program, I knew my service was good, but I could never explain it properly. After the training, I delivered my first pitch confidently, and within a week, I closed three high-paying clients I thought were out of reach. Mary’s system works.
+— Chinedu O., Tech Entrepreneur</p>
                             </div>
                         </div>
                     </div>
@@ -1103,12 +1309,12 @@
             <h2 class="section-title">HOW TO REGISTER & PAY</h2>
             
             <div class="payment-container">
-                <h3 style="text-align: center; color: var(--secondary); margin-bottom: 20px;">Secure Your Spot in 3 Simple Steps</h3>
+                <h3 style="text-align: center; color: var(--secondary); margin-bottom: 20px; font-size: 1.4rem;">Secure Your Spot in 3 Simple Steps</h3>
                 
                 <div class="payment-steps">
                     <div class="payment-step">
                         <div class="step-number">1</div>
-                        <div>
+                        <div class="step-content">
                             <h4>Make Payment</h4>
                             <p>Transfer the registration fee of <strong>₦20,000</strong> to our bank account below:</p>
                             
@@ -1119,7 +1325,7 @@
                                 </div>
                                 <div class="bank-detail-item">
                                     <span class="bank-detail-label">Account Name:</span>
-                                    <span class="bank-detail-value">Mary Okosi</span>
+                                    <span class="bank-detail-value">MARY OKOSI</span>
                                 </div>
                                 <div class="bank-detail-item">
                                     <span class="bank-detail-label">Account Number:</span>
@@ -1137,7 +1343,7 @@
                     
                     <div class="payment-step">
                         <div class="step-number">2</div>
-                        <div>
+                        <div class="step-content">
                             <h4>Take Screenshot</h4>
                             <p>After making payment, take a clear screenshot of your transaction confirmation.</p>
                             <p><em>Make sure the screenshot shows:</em></p>
@@ -1152,16 +1358,16 @@
                     
                     <div class="payment-step">
                         <div class="step-number">3</div>
-                        <div>
+                        <div class="step-content">
                             <h4>Send Proof via WhatsApp</h4>
                             <p>Send the payment screenshot to our WhatsApp number to complete your registration:</p>
                             
                             <div class="whatsapp-cta">
-                                <h4 style="color: #25D366; margin-bottom: 15px;">
+                                <h4 style="color: #25D366; margin-bottom: 15px; font-size: 1.2rem;">
                                     <i class="fab fa-whatsapp"></i> Send Payment Proof to WhatsApp
                                 </h4>
-                                <p style="margin-bottom: 20px;">Click the button below to automatically open WhatsApp and send your payment screenshot.</p>
-                                <a href="https://wa.me/23490601727?text=Hello!%20I've%20just%20paid%20for%20The%20Client%20Magnetic%20Speaking%20System.%20Here's%20my%20payment%20proof:" 
+                                <p style="margin-bottom: 20px; font-size: 0.95rem;">Click the button below to automatically open WhatsApp and send your payment screenshot.</p>
+                                <a href="https://wa.me/2349060901727?text=Hello!%20I've%20just%20paid%20for%20The%20Client%20Magnetic%20Speaking%20System.%20Here's%20my%20payment%20proof:" 
                                    class="btn btn-whatsapp btn-large" 
                                    target="_blank">
                                     <i class="fab fa-whatsapp"></i> SEND PAYMENT PROOF ON WHATSAPP
@@ -1172,9 +1378,9 @@
                     </div>
                 </div>
                 
-                <div style="text-align: center; margin-top: 40px; padding-top: 30px; border-top: 2px dashed #ddd;">
-                    <h4 style="color: var(--accent); margin-bottom: 15px;">Need Help With Payment?</h4>
-                    <p>If you encounter any issues with payment or registration, contact us directly on WhatsApp or call: <strong>+23490601727</strong></p>
+                <div style="text-align: center; margin-top: 30px; padding-top: 25px; border-top: 2px dashed #ddd;">
+                    <h4 style="color: var(--accent); margin-bottom: 15px; font-size: 1.1rem;">Need Help With Payment?</h4>
+                    <p style="font-size: 0.95rem;">If you encounter any issues with payment or registration, contact us directly on WhatsApp or call: <strong>+234 906 090 1727</strong></p>
                 </div>
             </div>
         </div>
@@ -1185,10 +1391,10 @@
         <div class="container">
             <div class="guarantee-card">
                 <i class="fas fa-shield-alt"></i>
-                <h2>THE CLIENT-OR-NOTHING GUARANTEE</h2>
-                <p style="font-size: 1.2rem; margin-bottom: 20px;">If after the program you still feel your communication did not improve in a clear, noticeable way, and you can't confidently deliver a pitch that attracts clients...</p>
-                <p style="font-weight: 600; margin-bottom: 20px;">Send a message, show your completed assignments, and you'll get a full refund.</p>
-                <p style="font-size: 1.3rem; color: var(--success); font-weight: 700;">No drama. No long story.</p>
+                <h2 style="font-size: 1.6rem;">THE CLIENT-OR-NOTHING GUARANTEE</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 20px;">If after the program you still feel your communication did not improve in a clear, noticeable way, and you can't confidently deliver a pitch that attracts clients...</p>
+                <p style="font-weight: 600; margin-bottom: 20px; font-size: 1.1rem;">Send a message, show your completed assignments, and you'll get a full refund.</p>
+                <p style="font-size: 1.2rem; color: var(--success); font-weight: 700;">No drama. No long story.</p>
             </div>
         </div>
     </section>
@@ -1196,16 +1402,16 @@
     <!-- Final CTA -->
     <section style="background: var(--light);">
         <div class="container" style="text-align: center;">
-            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Your Speaking Can Pay You</h2>
-            <p style="font-size: 1.3rem; max-width: 800px; margin: 0 auto 30px;">
+            <h2 style="font-size: 1.8rem; margin-bottom: 20px;">Your Speaking Can Pay You</h2>
+            <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto 25px;">
                 If the way you speak is not bringing you money, it is time to upgrade it.<br>
                 Your skill is not your problem. Your certificates are not the problem. Your experience is not the problem.<br>
                 The problem is that people cannot feel the value when you talk.
             </p>
             
-            <h3 style="color: var(--accent); margin-bottom: 30px;">Let's fix it. Let's make your speaking start paying you.</h3>
+            <h3 style="color: var(--accent); margin-bottom: 25px; font-size: 1.3rem;">Let's fix it. Let's make your speaking start paying you.</h3>
             
-            <a href="#payment" class="btn btn-large floating" style="font-size: 1.4rem; padding: 25px 50px;">
+            <a href="#payment" class="btn btn-large floating" style="font-size: 1.2rem; padding: 18px 30px;">
                 <i class="fas fa-bolt"></i> CLICK TO REGISTER & PAY NOW
             </a>
             
@@ -1219,26 +1425,26 @@
     <footer>
         <div class="container">
             <div class="footer-logo">
-                <div style="background: var(--accent); width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-                    <i class="fas fa-microphone-alt" style="color: white; font-size: 1.5rem;"></i>
+                <div style="background: var(--accent); width: 35px; height: 35px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-microphone-alt" style="color: white; font-size: 1.3rem;"></i>
                 </div>
                 <div>ORATORS<span>GUILD</span></div>
             </div>
-            <p style="max-width: 700px; margin: 0 auto 30px; opacity: 0.9;">
+            <p style="max-width: 700px; margin: 0 auto 25px; opacity: 0.9; font-size: 0.95rem;">
                 The Client Magnetic Speaking System™ is a transformational communication program designed to help business owners, coaches, and professionals speak in a way that attracts clients and increases income.
             </p>
             
-            <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 30px;">
-                <a href="https://wa.me/23490601727" style="color: white; font-size: 1.5rem;" target="_blank">
+            <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 25px;">
+                <a href="https://wa.me/2349060901727" style="color: white; font-size: 1.3rem;" target="_blank">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="#" style="color: white; font-size: 1.5rem;">
+                <a href="#" style="color: white; font-size: 1.3rem;">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="#" style="color: white; font-size: 1.5rem;">
+                <a href="#" style="color: white; font-size: 1.3rem;">
                     <i class="fab fa-facebook"></i>
                 </a>
-                <a href="#" style="color: white; font-size: 1.5rem;">
+                <a href="#" style="color: white; font-size: 1.3rem;">
                     <i class="fab fa-linkedin"></i>
                 </a>
             </div>
@@ -1285,7 +1491,7 @@
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
                         window.scrollTo({
-                            top: targetElement.offsetTop - 100,
+                            top: targetElement.offsetTop - 80,
                             behavior: 'smooth'
                         });
                     }

@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Client Magnetic Speaking System™ | Speak and Win Clients</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #ff7a00;
+            --accent-light: #ff9a42;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --dark: #121212;
+            --success: #28a745;
+            --transition: all 0.3s ease;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --shadow-heavy: 0 20px 40px rgba(0, 0, 0, 0.15);
+            --border-radius: 12px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #fefefe;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            background: var(--accent);
+            color: white;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(255, 122, 0, 0.3);
+        }
+        
+        .btn:hover {
+            background: var(--accent-light);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 122, 0, 0.4);
+        }
+        
+        .btn-large {
+            padding: 20px 40px;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        
+        .btn-whatsapp {
+            background: #25D366;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+        
+        .btn-whatsapp:hover {
+            background: #20bd5a;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+        }
+        
+        /* Header */
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-img {
+            height: 40px;
+            width: auto;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .header-cta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .header-price {
+            background: var(--accent);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(22, 33, 62, 0.9), rgba(26, 26, 46, 0.95)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.9;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 122, 0, 0.2);
+            border: 2px solid var(--accent);
+            padding: 10px 20px;
+            border-radius: 50px;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        /* Problem Section */
+        .problem-section {
+            background: var(--light);
+        }
+        
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .problem-card {
+            background: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .problem-card i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Benefits Section */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .benefit-icon {
+            background: rgba(255, 122, 0, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .benefit-icon i {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+        
+        /* Bonuses Section */
+        .bonuses {
+            background: var(--light);
+        }
+        
+        .bonus-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .bonus-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .bonus-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .bonus-header {
+            background: var(--secondary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .bonus-body {
+            padding: 30px;
+        }
+        
+        .bonus-value {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-top: 15px;
+        }
+        
+        /* Testimonial/Screenshot Section with 3D Effect */
+        .testimonial-section {
+            background: var(--primary);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonial-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,122,0,0.1) 0%, rgba(255,122,0,0) 70%);
+            z-index: 0;
+        }
+        
+        .testimonial-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* 3D Screenshot Container */
+        .screenshot-3d-container {
+            perspective: 1200px;
+            margin-bottom: 60px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .screenshot-3d-inner {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            transform-style: preserve-3d;
+            animation: rotate3d 20s infinite linear;
+        }
+        
+        .screenshot-3d-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .screenshot-3d-face-front {
+            transform: translateZ(150px);
+        }
+        
+        .screenshot-3d-face-back {
+            transform: rotateY(180deg) translateZ(150px);
+        }
+        
+        .screenshot-3d-face-right {
+            transform: rotateY(90deg) translateZ(150px);
+        }
+        
+        .screenshot-3d-face-left {
+            transform: rotateY(-90deg) translateZ(150px);
+        }
+        
+        .screenshot-3d-face-top {
+            transform: rotateX(90deg) translateZ(150px);
+        }
+        
+        .screenshot-3d-face-bottom {
+            transform: rotateX(-90deg) translateZ(150px);
+        }
+        
+        .screenshot-header {
+            background: #e0e0e0;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .screenshot-dots {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .screenshot-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .dot-red { background: #ff5f56; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #27ca3f; }
+        
+        .screenshot-placeholder {
+            height: 100%;
+            background: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            padding: 40px;
+            flex-grow: 1;
+        }
+        
+        .screenshot-placeholder i {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        
+        .screenshot-placeholder h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .testimonial-text {
+            text-align: center;
+            max-width: 800px;
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            margin-top: 20px;
+            font-size: 1.1rem;
+            color: var(--accent);
+        }
+        
+        /* Payment Section */
+        .payment-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .payment-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .payment-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .payment-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        
+        .step-number {
+            background: var(--accent);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        .bank-details {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin: 30px 0;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .bank-detail-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        .bank-detail-item:last-child {
+            border-bottom: none;
+        }
+        
+        .bank-detail-label {
+            font-weight: 600;
+            color: var(--secondary);
+        }
+        
+        .bank-detail-value {
+            font-weight: 700;
+            color: var(--dark);
+            font-family: monospace;
+            font-size: 1.1rem;
+        }
+        
+        .whatsapp-cta {
+            text-align: center;
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(37, 211, 102, 0.1);
+            border-radius: var(--border-radius);
+            border: 2px dashed #25D366;
+        }
+        
+        /* Pricing Section */
+        .pricing-card {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: white;
+            border-radius: var(--border-radius);
+            padding: 50px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: var(--shadow-heavy);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card:before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 122, 0, 0.1);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+        }
+        
+        .pricing-card:after {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 122, 0, 0.1);
+            border-radius: 50%;
+            bottom: -75px;
+            left: -75px;
+        }
+        
+        .price-comparison {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .old-price {
+            text-decoration: line-through;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.5rem;
+        }
+        
+        .current-price {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+        
+        .seats-counter {
+            background: rgba(255, 122, 0, 0.2);
+            border: 2px solid var(--accent);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin: 30px auto;
+            max-width: 500px;
+            font-weight: 600;
+        }
+        
+        /* Guarantee Section */
+        .guarantee-card {
+            background: rgba(40, 167, 69, 0.1);
+            border: 2px solid var(--success);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .guarantee-card i {
+            font-size: 3rem;
+            color: var(--success);
+            margin-bottom: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 60px 0 30px;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .footer-logo span {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes rotate3d {
+            0% { transform: rotateX(0deg) rotateY(0deg); }
+            25% { transform: rotateX(10deg) rotateY(90deg); }
+            50% { transform: rotateX(0deg) rotateY(180deg); }
+            75% { transform: rotateX(-10deg) rotateY(270deg); }
+            100% { transform: rotateX(0deg) rotateY(360deg); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .price-comparison {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .current-price {
+                font-size: 2.8rem;
+            }
+            
+            .pricing-card {
+                padding: 30px 20px;
+            }
+            
+            .payment-container {
+                padding: 25px 20px;
+            }
+            
+            .screenshot-3d-container {
+                perspective: 800px;
+            }
+            
+            .screenshot-3d-inner {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .screenshot-3d-face-front,
+            .screenshot-3d-face-back,
+            .screenshot-3d-face-right,
+            .screenshot-3d-face-left,
+            .screenshot-3d-face-top,
+            .screenshot-3d-face-bottom {
+                transform: translateZ(125px);
+            }
+            
+            .screenshot-3d-face-back {
+                transform: rotateY(180deg) translateZ(125px);
+            }
+            
+            .screenshot-3d-face-right {
+                transform: rotateY(90deg) translateZ(125px);
+            }
+            
+            .screenshot-3d-face-left {
+                transform: rotateY(-90deg) translateZ(125px);
+            }
+            
+            .screenshot-3d-face-top {
+                transform: rotateX(90deg) translateZ(125px);
+            }
+            
+            .screenshot-3d-face-bottom {
+                transform: rotateX(-90deg) translateZ(125px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-img-placeholder" style="background: var(--accent); width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-microphone-alt" style="color: white; font-size: 1.5rem;"></i>
+                </div>
+                <div>ORATORS<span>GUILD</span></div>
+            </div>
+            <div class="header-cta">
+                <div class="header-price">₦20,000 ONLY</div>
+                <a href="#payment" class="btn">Register Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">LIMITED TIME OFFER</div>
+            <h1>SPEAK AND WIN CLIENTS</h1>
+            <h2>The Client Magnetic Speaking System™</h2>
+            <p>Turn Your Voice Into a Tool That Brings Clients, Money, and Opportunities Without Begging Anyone.</p>
+            <a href="#payment" class="btn btn-large floating"><i class="fas fa-bolt"></i> Secure Your Spot Now</a>
+            <p style="margin-top: 20px; font-size: 1rem;">Only 50 seats available. Doors close when filled.</p>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <h2 class="section-title">If You've Ever Said...</h2>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <i class="fas fa-comment-slash"></i>
+                    <h3>"I talk but clients no dey show"</h3>
+                    <p>You're putting yourself out there but the right clients just aren't responding to your message.</p>
+                </div>
+                <div class="problem-card">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h3>"My price dey chase people away"</h3>
+                    <p>You know your value but every time you quote your price, potential clients disappear.</p>
+                </div>
+                <div class="problem-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>"I know this thing but I don't know how to explain it well"</h3>
+                    <p>You have the expertise but struggle to articulate your value in a way that converts.</p>
+                </div>
+                <div class="problem-card">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h3>"People like my work but they don't pay"</h3>
+                    <p>You get compliments and positive feedback, but those admiring words don't turn into paying clients.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px; padding: 30px; background: white; border-radius: var(--border-radius); box-shadow: var(--shadow);">
+                <h3 style="color: var(--accent);">Let me tell you the truth most people will not say:</h3>
+                <p style="font-size: 1.2rem; font-weight: 600; margin-top: 15px;">Your problem is not your business.<br>Your problem is the way you talk about your business.<br>And until you fix that, clients will keep passing you.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Imagine This Version of You</h2>
+            <div class="benefits-grid">
+                <div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fas fa-check"></i></div>
+                        <div>
+                            <h3>You speak and people listen differently</h3>
+                            <p>Command attention every time you open your mouth.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fas fa-check"></i></div>
+                        <div>
+                            <h3>You explain your value and people feel the need to pay</h3>
+                            <p>Turn your expertise into irresistible offers.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fas fa-check"></i></div>
+                        <div>
+                            <h3>Your price no longer scares people</h3>
+                            <p>Position yourself as premium and watch clients say YES to your rates.</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fas fa-check"></i></div>
+                        <div>
+                            <h3>You pitch with confidence</h3>
+                            <p>Eliminate doubt and hesitation from your communication.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fas fa-check"></i></div>
+                        <div>
+                            <h3>You start attracting clients you used to think were "too big"</h3>
+                            <p>Level up your clientele with magnetic speaking.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fas fa-check"></i></div>
+                        <div>
+                            <h3>You finally stop sounding unsure, scattered, or small</h3>
+                            <p>Present with the authority and clarity you deserve.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px; padding: 40px; background: linear-gradient(135deg, var(--secondary), var(--primary)); color: white; border-radius: var(--border-radius);">
+                <h3 style="color: var(--accent);">That is what The Client Magnetic Speaking System is created to do.</h3>
+                <p style="font-size: 1.3rem; font-weight: 600; margin-top: 20px;">It is designed for one outcome only:<br>Make your speaking bring you clients. Fast.</p>
+                <p style="margin-top: 15px; font-style: italic;">Not theory. Not motivational talk. Pure practical communication that puts money in your account.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who is this for -->
+    <section style="background: var(--light);">
+        <div class="container">
+            <h2 class="section-title">WHO IS THIS FOR?</h2>
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
+                <p style="font-size: 1.2rem;">This system is perfect for you if you're a:</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto;">
+                <div style="background: white; padding: 25px; border-radius: var(--border-radius); box-shadow: var(--shadow); text-align: center;">
+                    <i class="fas fa-briefcase" style="font-size: 2rem; color: var(--accent); margin-bottom: 15px;"></i>
+                    <h3>Business Owner</h3>
+                </div>
+                <div style="background: white; padding: 25px; border-radius: var(--border-radius); box-shadow: var(--shadow); text-align: center;">
+                    <i class="fas fa-rocket" style="font-size: 2rem; color: var(--accent); margin-bottom: 15px;"></i>
+                    <h3>Startup Founder</h3>
+                </div>
+                <div style="background: white; padding: 25px; border-radius: var(--border-radius); box-shadow: var(--shadow); text-align: center;">
+                    <i class="fas fa-user-tie" style="font-size: 2rem; color: var(--accent); margin-bottom: 15px;"></i>
+                    <h3>Corporate Professional</h3>
+                </div>
+                <div style="background: white; padding: 25px; border-radius: var(--border-radius); box-shadow: var(--shadow); text-align: center;">
+                    <i class="fas fa-chalkboard-teacher" style="font-size: 2rem; color: var(--accent); margin-bottom: 15px;"></i>
+                    <h3>Coach or Creator</h3>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px; padding: 30px; background: white; border-radius: var(--border-radius); max-width: 800px; margin-left: auto; margin-right: auto; box-shadow: var(--shadow);">
+                <h3 style="color: var(--accent);">If speaking is part of your work, then speaking must start paying you.</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Get -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">WHAT YOU ARE GETTING</h2>
+            
+            <div style="max-width: 900px; margin: 0 auto 50px; background: linear-gradient(135deg, var(--secondary), var(--primary)); color: white; padding: 40px; border-radius: var(--border-radius);">
+                <h3 style="color: var(--accent); text-align: center;">The Client Magnetic Speaking System™</h3>
+                <p style="text-align: center; margin-bottom: 30px;">A transformational communication experience that teaches you exactly how to:</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                        <div style="background: rgba(255, 122, 0, 0.2); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+                            <i class="fas fa-check" style="color: var(--accent); font-size: 0.8rem;"></i>
+                        </div>
+                        <span>Deliver a premium pitch</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                        <div style="background: rgba(255, 122, 0, 0.2); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+                            <i class="fas fa-check" style="color: var(--accent); font-size: 0.8rem;"></i>
+                        </div>
+                        <span>Command respect when you speak</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                        <div style="background: rgba(255, 122, 0, 0.2); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+                            <i class="fas fa-check" style="color: var(--accent); font-size: 0.8rem;"></i>
+                        </div>
+                        <span>Convert objections into agreement</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                        <div style="background: rgba(255, 122, 0, 0.2); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+                            <i class="fas fa-check" style="color: var(--accent); font-size: 0.8rem;"></i>
+                        </div>
+                        <span>Position yourself as the best option</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                        <div style="background: rgba(255, 122, 0, 0.2); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+                            <i class="fas fa-check" style="color: var(--accent); font-size: 0.8rem;"></i>
+                        </div>
+                        <span>Make clients feel safe choosing you</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+                        <div style="background: rgba(255, 122, 0, 0.2); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+                            <i class="fas fa-check" style="color: var(--accent); font-size: 0.8rem;"></i>
+                        </div>
+                        <span>Speak in a way that increases your price power</span>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 style="text-align: center; margin-bottom: 40px; color: var(--secondary);">PLUS 3 PREMIUM BONUSES FOR YOU</h3>
+            
+            <div class="bonus-cards">
+                <div class="bonus-card">
+                    <div class="bonus-header">
+                        <h3>Bonus 1</h3>
+                        <p>Client-Closing Script Pack</p>
+                    </div>
+                    <div class="bonus-body">
+                        <p>Word-for-word speaking scripts for:</p>
+                        <ul style="margin-top: 15px; margin-left: 20px;">
+                            <li style="margin-bottom: 8px;">Handling price objections</li>
+                            <li style="margin-bottom: 8px;">Responding to "I'll get back to you"</li>
+                            <li style="margin-bottom: 8px;">Closing on WhatsApp or call</li>
+                            <li style="margin-bottom: 8px;">Follow-up scripts that work</li>
+                        </ul>
+                        <div class="bonus-value">Value: ₦35,000</div>
+                    </div>
+                </div>
+                
+                <div class="bonus-card">
+                    <div class="bonus-header">
+                        <h3>Bonus 2</h3>
+                        <p>The Magnetic Message Template Vault</p>
+                    </div>
+                    <div class="bonus-body">
+                        <p>Templates you can copy and paste to:</p>
+                        <ul style="margin-top: 15px; margin-left: 20px;">
+                            <li style="margin-bottom: 8px;">Craft an irresistible offer</li>
+                            <li style="margin-bottom: 8px;">Talk about your value like a pro</li>
+                            <li style="margin-bottom: 8px;">Position yourself as premium</li>
+                        </ul>
+                        <div class="bonus-value">Value: ₦25,000</div>
+                    </div>
+                </div>
+                
+                <div class="bonus-card">
+                    <div class="bonus-header">
+                        <h3>Bonus 3</h3>
+                        <p>Personal Pitch Audit by Mary Okosi</p>
+                    </div>
+                    <div class="bonus-body">
+                        <p>Send in your pitch. Get a personalized voice note breaking down what to fix so your pitch hits harder.</p>
+                        <div class="bonus-value">Value: ₦50,000</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial/Screenshot Section with 3D Effect -->
+    <section class="testimonial-section" id="screenshot">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">SEE THE RESULTS</h2>
+            
+            <div class="testimonial-container">
+                <!-- 3D Screenshot Container -->
+                <div class="screenshot-3d-container">
+                    <div class="screenshot-3d-inner">
+                        <!-- Front Face -->
+                        <div class="screenshot-3d-face screenshot-3d-face-front">
+                            <div class="screenshot-header">
+                                <div class="screenshot-dots">
+                                    <div class="screenshot-dot dot-red"></div>
+                                    <div class="screenshot-dot dot-yellow"></div>
+                                    <div class="screenshot-dot dot-green"></div>
+                                </div>
+                            </div>
+                            <div class="screenshot-placeholder">
+                                <i class="fas fa-comment-dots"></i>
+                                <h4>WhatsApp Testimonial</h4>
+                                <p style="text-align: center; font-size: 0.9rem;">Before this program, I knew my service was good, but I could never explain it properly. After the training, I delivered my first pitch confidently, and within a week, I closed three high-paying clients I thought were out of reach. Mary’s system works."
+
+                                  — Chinedu O., Tech Entrepreneur</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Back Face -->
+                        <div class="screenshot-3d-face screenshot-3d-face-back">
+                            <div class="screenshot-header">
+                                <div class="screenshot-dots">
+                                    <div class="screenshot-dot dot-red"></div>
+                                    <div class="screenshot-dot dot-yellow"></div>
+                                    <div class="screenshot-dot dot-green"></div>
+                                </div>
+                            </div>
+                            <div class="screenshot-placeholder">
+                                <i class="fas fa-star"></i>
+                                <h4>5-Star Reviews</h4>
+                                <p style="text-align: center; font-size: 0.9rem;">I’ve always struggled to sell my programs without sounding pushy. The Client Magnetic Speaking System™ gave me exact scripts and techniques to position my value. Now, clients reach out to me without me chasing anyone!"
+— Amaka E., Personal Development Coach</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Right Face -->
+                        <div class="screenshot-3d-face screenshot-3d-face-right">
+                            <div class="screenshot-header">
+                                <div class="screenshot-dots">
+                                    <div class="screenshot-dot dot-red"></div>
+                                    <div class="screenshot-dot dot-yellow"></div>
+                                    <div class="screenshot-dot dot-green"></div>
+                                </div>
+                            </div>
+                            <div class="screenshot-placeholder">
+                                <i class="fas fa-chart-line"></i>
+                                <h4>Revenue Growth</h4>
+                                <p style="text-align: center; font-size: 0.9rem;">I used to get nervous during presentations and felt my ideas were undervalued. After this training, I speak with clarity and authority. My manager and clients now actively seek my input, and my salary negotiation went smoothly!"
+— Tunde A., Corporate Manage</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Left Face -->
+                        <div class="screenshot-3d-face screenshot-3d-face-left">
+                            <div class="screenshot-header">
+                                <div class="screenshot-dots">
+                                    <div class="screenshot-dot dot-red"></div>
+                                    <div class="screenshot-dot dot-yellow"></div>
+                                    <div class="screenshot-dot dot-green"></div>
+                                </div>
+                            </div>
+                            <div class="screenshot-placeholder">
+                                <i class="fas fa-user-check"></i>
+                                <h4>Client Wins</h4>
+                                <p style="text-align: center; font-size: 0.9rem;">I spent months pitching investors with no success. After applying the techniques I learned from Mary, I finally secured a ₦5 million seed investment in just two pitches. This system is pure results."
+— Sade L., Startup Founder</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Top Face -->
+                        <div class="screenshot-3d-face screenshot-3d-face-top">
+                            <div class="screenshot-header">
+                                <div class="screenshot-dots">
+                                    <div class="screenshot-dot dot-red"></div>
+                                    <div class="screenshot-dot dot-yellow"></div>
+                                    <div class="screenshot-dot dot-green"></div>
+                                </div>
+                            </div>
+                            <div class="screenshot-placeholder">
+                                <i class="fas fa-award"></i>
+                                <h4>Transformation Proof</h4>
+                                <p style="text-align: center; font-size: 0.9rem;">Evidence of communication skill improvement</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Bottom Face -->
+                        <div class="screenshot-3d-face screenshot-3d-face-bottom">
+                            <div class="screenshot-header">
+                                <div class="screenshot-dots">
+                                    <div class="screenshot-dot dot-red"></div>
+                                    <div class="screenshot-dot dot-yellow"></div>
+                                    <div class="screenshot-dot dot-green"></div>
+                                </div>
+                            </div>
+                            <div class="screenshot-placeholder">
+                                <i class="fas fa-heart"></i>
+                                <h4>Happy Participants</h4>
+                                <p style="text-align: center; font-size: 0.9rem;">Testimonials from transformed speakers</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial Text -->
+                <div class="testimonial-text">
+                    "Before this program, I struggled to close clients even though I knew I was good at what I did. After implementing just one technique from the Client Magnetic System, I closed a ₦500,000 deal in one week. This isn't just a course, it's a business transformation."
+                </div>
+                
+                <div class="testimonial-author">- Adeola Johnson, Business Consultant</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Section -->
+    <section class="payment-section" id="payment">
+        <div class="container">
+            <h2 class="section-title">HOW TO REGISTER & PAY</h2>
+            
+            <div class="payment-container">
+                <h3 style="text-align: center; color: var(--secondary); margin-bottom: 20px;">Secure Your Spot in 3 Simple Steps</h3>
+                
+                <div class="payment-steps">
+                    <div class="payment-step">
+                        <div class="step-number">1</div>
+                        <div>
+                            <h4>Make Payment</h4>
+                            <p>Transfer the registration fee of <strong>₦20,000</strong> to our bank account below:</p>
+                            
+                            <div class="bank-details">
+                                <div class="bank-detail-item">
+                                    <span class="bank-detail-label">Bank Name:</span>
+                                    <span class="bank-detail-value">FIRST BANK</span>
+                                </div>
+                                <div class="bank-detail-item">
+                                    <span class="bank-detail-label">Account Name:</span>
+                                    <span class="bank-detail-value">Mary Okosi</span>
+                                </div>
+                                <div class="bank-detail-item">
+                                    <span class="bank-detail-label">Account Number:</span>
+                                    <span class="bank-detail-value">3110293867</span>
+                                </div>
+                                <div class="bank-detail-item">
+                                    <span class="bank-detail-label">Amount:</span>
+                                    <span class="bank-detail-value">₦20,000</span>
+                                </div>
+                            </div>
+                            
+                            <p><strong>Note:</strong> Use your full name as the transfer reference.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-step">
+                        <div class="step-number">2</div>
+                        <div>
+                            <h4>Take Screenshot</h4>
+                            <p>After making payment, take a clear screenshot of your transaction confirmation.</p>
+                            <p><em>Make sure the screenshot shows:</em></p>
+                            <ul style="margin-left: 20px; margin-top: 10px;">
+                                <li>Your name as the sender</li>
+                                <li>Our account details</li>
+                                <li>Payment amount (₦20,000)</li>
+                                <li>Transaction date and time</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-step">
+                        <div class="step-number">3</div>
+                        <div>
+                            <h4>Send Proof via WhatsApp</h4>
+                            <p>Send the payment screenshot to our WhatsApp number to complete your registration:</p>
+                            
+                            <div class="whatsapp-cta">
+                                <h4 style="color: #25D366; margin-bottom: 15px;">
+                                    <i class="fab fa-whatsapp"></i> Send Payment Proof to WhatsApp
+                                </h4>
+                                <p style="margin-bottom: 20px;">Click the button below to automatically open WhatsApp and send your payment screenshot.</p>
+                                <a href="https://wa.me/23490601727?text=Hello!%20I've%20just%20paid%20for%20The%20Client%20Magnetic%20Speaking%20System.%20Here's%20my%20payment%20proof:" 
+                                   class="btn btn-whatsapp btn-large" 
+                                   target="_blank">
+                                    <i class="fab fa-whatsapp"></i> SEND PAYMENT PROOF ON WHATSAPP
+                                </a>
+                                <p style="margin-top: 15px; font-size: 0.9rem;">We'll confirm your payment and send you immediate access to the system.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 40px; padding-top: 30px; border-top: 2px dashed #ddd;">
+                    <h4 style="color: var(--accent); margin-bottom: 15px;">Need Help With Payment?</h4>
+                    <p>If you encounter any issues with payment or registration, contact us directly on WhatsApp or call: <strong>+23490601727</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section>
+        <div class="container">
+            <div class="guarantee-card">
+                <i class="fas fa-shield-alt"></i>
+                <h2>THE CLIENT-OR-NOTHING GUARANTEE</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 20px;">If after the program you still feel your communication did not improve in a clear, noticeable way, and you can't confidently deliver a pitch that attracts clients...</p>
+                <p style="font-weight: 600; margin-bottom: 20px;">Send a message, show your completed assignments, and you'll get a full refund.</p>
+                <p style="font-size: 1.3rem; color: var(--success); font-weight: 700;">No drama. No long story.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section style="background: var(--light);">
+        <div class="container" style="text-align: center;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Your Speaking Can Pay You</h2>
+            <p style="font-size: 1.3rem; max-width: 800px; margin: 0 auto 30px;">
+                If the way you speak is not bringing you money, it is time to upgrade it.<br>
+                Your skill is not your problem. Your certificates are not the problem. Your experience is not the problem.<br>
+                The problem is that people cannot feel the value when you talk.
+            </p>
+            
+            <h3 style="color: var(--accent); margin-bottom: 30px;">Let's fix it. Let's make your speaking start paying you.</h3>
+            
+            <a href="#payment" class="btn btn-large floating" style="font-size: 1.4rem; padding: 25px 50px;">
+                <i class="fas fa-bolt"></i> CLICK TO REGISTER & PAY NOW
+            </a>
+            
+            <div class="seats-counter">
+                <i class="fas fa-exclamation-triangle"></i> Only 50 seats available. Doors close when filled.
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <div style="background: var(--accent); width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-microphone-alt" style="color: white; font-size: 1.5rem;"></i>
+                </div>
+                <div>ORATORS<span>GUILD</span></div>
+            </div>
+            <p style="max-width: 700px; margin: 0 auto 30px; opacity: 0.9;">
+                The Client Magnetic Speaking System™ is a transformational communication program designed to help business owners, coaches, and professionals speak in a way that attracts clients and increases income.
+            </p>
+            
+            <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 30px;">
+                <a href="https://wa.me/23490601727" style="color: white; font-size: 1.5rem;" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="#" style="color: white; font-size: 1.5rem;">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" style="color: white; font-size: 1.5rem;">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#" style="color: white; font-size: 1.5rem;">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2023 ORATORS GUILD | The Client Magnetic Speaking System™. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple counter animation for seats
+        document.addEventListener('DOMContentLoaded', function() {
+            // Floating animation for CTA button
+            const floatButton = document.querySelector('.floating');
+            if (floatButton) {
+                setInterval(() => {
+                    floatButton.classList.toggle('floating');
+                }, 3000);
+            }
+            
+            // Simple countdown for seats
+            const seatsElement = document.querySelector('.seats-counter');
+            if (seatsElement) {
+                let seats = 50;
+                let interval = setInterval(() => {
+                    if (seats > 20) {
+                        seats -= Math.floor(Math.random() * 3);
+                        seatsElement.innerHTML = `<i class="fas fa-exclamation-triangle"></i> Only ${seats} seats remaining! Doors close when filled.`;
+                    } else {
+                        clearInterval(interval);
+                    }
+                }, 8000);
+            }
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Pause 3D animation on hover
+            const screenshot3d = document.querySelector('.screenshot-3d-inner');
+            if (screenshot3d) {
+                screenshot3d.addEventListener('mouseenter', function() {
+                    this.style.animationPlayState = 'paused';
+                });
+                
+                screenshot3d.addEventListener('mouseleave', function() {
+                    this.style.animationPlayState = 'running';
+                });
+            }
+            
+            // Update WhatsApp link with user's message
+            const whatsappBtn = document.querySelector('.btn-whatsapp');
+            if (whatsappBtn) {
+                // You can customize the default message here
+                const defaultMessage = "Hello! I've just paid for The Client Magnetic Speaking System. Here's my payment proof:";
+                whatsappBtn.href = `https://wa.me/2349060901727?text=${encodeURIComponent(defaultMessage)}`;
+            }
+        });
+    </script>
+</body>
+</html>
